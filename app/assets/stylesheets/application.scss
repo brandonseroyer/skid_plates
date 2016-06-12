@@ -12,4 +12,19 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "bootstrap-social";
+ @import "font-awesome";
+ @import "social-share-button";
+
+ .dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
