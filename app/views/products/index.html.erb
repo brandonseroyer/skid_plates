@@ -1,4 +1,7 @@
-<% @products.each do |product| %>
-  <%= product.name %>
-  <%= product.price %>
-<% end %>
+<div id="products-body">
+  <% @products.each do |product| %>
+    <%= product.name %>
+    <%= product.price %>
+    <br>
+  <% end %>
+</div>

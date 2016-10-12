@@ -1,1 +1,60 @@
-welcome to the site
+<div id="index-body">
+    <div id="carousel-home" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home" data-slide-to="1"></li>
+        <li data-target="#carousel-home" data-slide-to="2"></li>
+        <li data-target="#carousel-home" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= link_to image_tag("", :alt => "") %>
+          <div class="carousel-caption">
+            <div id="carousel-text">
+              Welcome to Von Dubinhaus Shepherds!
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("", :alt => "German Shepherd Dog Rescue located in Portland, Oregon") %>
+          <div class="carousel-caption">
+            <div id="carousel-text">
+              Portland's Exclusive German Shepherd Dog Rescue
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("", :alt => "Professional Dog Training Portland, Oregon") %>
+          <div class="carousel-caption">
+            <div id="carousel-text">
+              Professional trainers with 15+ years experience
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("", :alt => "Professional Dog Training Portland, Oregon")%>
+          <div class="carousel-caption">
+            <div id="carousel-text">
+              Help your dog achieve their potential today!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </body>
+</div>
+<footer>
+</footer>
