@@ -1,3 +1,16 @@
+<%= image_tag @product.image.url %>
+<br>
+<% if @product.images.any? %>
+  <% @images.each do |image| %>
+    <div class="img-thumbnail">
+      <%= image_tag image.avatar.url(:thumb), alt: image.avatar.url(:thumb) %>
+    </div>
+  <% end %>
+<% end %>
+<%= link_to "Add Photo", new_product_image_path(@product) %>
+<br>
 <%= @product.name %>
+<br>
 <%= @product.price %>
+<br>
 <%= @product.status %>

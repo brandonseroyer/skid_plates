@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require social-share-button
+ *= require dropzone/dropzone
  */
 
  @import "bootstrap-sprockets";
@@ -24,7 +25,11 @@
 body {
 }
 
- .dropdown-menu li:hover .sub-menu {
+.carousel {
+  box-shadow: 2px 2px 15px black;
+}
+
+.dropdown-menu li:hover .sub-menu {
     visibility: visible;
 }
 
@@ -32,10 +37,23 @@ body {
     display: block;
 }
 
+.navbar-default {
+  background-color: white;
+  width: 100%;
+  margin: auto;
+  box-shadow: 2px 2px 10px black;
+}
+
+#carousel-home,
+#carousel-home .item,
+#carousel-home .item img {
+  width: 100%;
+}
+
 #index-body {
-  padding-left: 2%;
 }
 
 #products-body {
   padding-left: 2%;
+  padding-top: 2%;
 }

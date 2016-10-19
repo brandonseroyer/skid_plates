@@ -13,14 +13,14 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'bootstrap-social-rails'
 gem 'rest-client'
-gem "paperclip"
 gem 'aws-sdk', '< 2.0'
 gem 'stripe'
 gem 'ckeditor'
 gem 'social-share-button'
 gem 'kaminari'
 gem 'recaptcha', :require => 'recaptcha/rails'
-
+gem "paperclip", "~> 4.2"
+gem 'dropzonejs-rails'
 
 group :development, :test do
   gem 'factory_girl_rails'

@@ -1,7 +1,12 @@
 <div id="products-body">
   <% @products.each do |product| %>
-    <%= product.name %>
-    <%= product.price %>
+  <div class="col-md-4">
+    <%= image_tag product.image.url %>
     <br>
+    <%= link_to product.name, product_path(product) %>
+    <br>
+    <b>$<%= product.price %></b>
+    <br>
+  </div>
   <% end %>
 </div>

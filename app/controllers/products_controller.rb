@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     @products = Product.all.order(created_at: :desc)
   end
@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @images = @product.images
     render :show
   end
 
@@ -33,6 +34,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :product_id, :price, :description, :status, :image, :user_id)
+    params.require(:product).permit(:name, :product_id, :price, :description, :status, :user_id)
   end
 end
