@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require dropzone
 //= require turbolinks
+//= require lightbox
 //= require_tree .

@@ -21,12 +21,9 @@
  @import "bootstrap-social";
  @import "font-awesome";
  @import "social-share-button";
-
-body {
-}
+ @import 'lightbox';
 
 .carousel {
-  box-shadow: 2px 2px 15px black;
 }
 
 .dropdown-menu li:hover .sub-menu {
@@ -40,8 +37,13 @@ body {
 .navbar-default {
   background-color: white;
   width: 100%;
-  margin: auto;
-  box-shadow: 2px 2px 10px black;
+  margin-bottom:0px !important;
+}
+
+.product-box {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 5%;
 }
 
 #carousel-home,
@@ -50,7 +52,9 @@ body {
   width: 100%;
 }
 
-#index-body {
+#forms {
+  padding-left: 2%;
+  padding-top: 2%;
 }
 
 #products-body {
