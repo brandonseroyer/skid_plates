@@ -1,7 +1,6 @@
 class OrderItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :order
-
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validate :product_present
   validate :order_present
@@ -17,7 +16,9 @@ class OrderItem < ActiveRecord::Base
 
   def total_price
     unit_price * quantity
-  end  private
+  end
+
+  private
 
   def product_present
     if product.nil?
