@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   skip_before_action :verify_authenticity_token
-
   def index
     @products = Product.all.order(created_at: :desc)
     @order_item = current_order.order_items.new
@@ -14,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to  products_path
+      redirect_to products_path
     else
       render :new
     end
