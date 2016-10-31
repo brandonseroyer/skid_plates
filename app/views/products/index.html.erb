@@ -1,25 +1,12 @@
-<h3 class="text-center">Products for Sale</h3>
-
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <% @products.each do |product| %>
-      <%= render "product_row", product: product, order_item: @order_item %>
-    <% end %>
-  </div>
-</div>
-
-<!-- <div id="products-body">
-  <% @products.each do |product| %>
-  <div class="col-md-4">
-    <div class="product-box">
-      <%= link_to image_tag( product.image.url, id: "product-index-image"), product_path(product) %>
-      <br>
-      <hr>
-      <%= link_to product.name, product_path(product) %>
-      <br>
-      <b>$<%= product.price %></b>
+<div id="products-index">
+  <h3 class="text-center">Products For Sale</h3>
+  <hr>
+  <b>Total Products: <%= @total_products %></b>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <% @products.each do |product| %>
+        <%= render "product_row", product: product, order_item: @order_item %>
       <% end %>
-      <br>
     </div>
   </div>
-</div> -->
+</div>

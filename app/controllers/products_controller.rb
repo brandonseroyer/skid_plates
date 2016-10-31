@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order(created_at: :desc)
     @order_item = current_order.order_items.new
+    @total_products = Product.all.count
   end
 
   def new
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @order_item = current_order.order_items.new
     @images = @product.images
     render :show
   end

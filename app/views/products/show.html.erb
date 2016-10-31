@@ -1,27 +1,42 @@
-<div id="products-body">
-  <div>
-  <%= image_tag @product.image.url %>
-  </div>
-  <br>
-  <% if @product.images.any? %>
-    <% @images.each do |image| %>
-      <div class="img-thumbnail">
-        <%= image_tag image.avatar.url(:thumb), alt: image.avatar.url(:thumb) %>
+<div id="product-show">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="well">
+      <h1><%= @product.name %></h1>
+      <div>
+      <%= image_tag @product.image.url %>
       </div>
-      <!-- <%= link_to "Delete", product_image_path(@product, image),
-      :data => {:confirm => "You sure?",
-        :method => "delete"} %> -->
-    <% end %>
-  <% end %>
-  <%= link_to "Add Photo", new_product_image_path(@product) %>
-  <br>
-  <%= @product.name %>
-  <br>
-  <%= @product.price %>
-  <br>
-  <%= @product.status %>
-  <br>
-  <br>
+      <br>
+      <% if @product.images.any? %>
+        <% @images.each do |image| %>
+          <div class="img-thumbnail">
+            <%= image_tag image.avatar.url(:thumb), alt: image.avatar.url(:thumb) %>
+          </div>
+          <!-- <%= link_to "Delete", product_image_path(@product, image),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %> -->
+        <% end %>
+      <% end %>
+      <%= link_to "Add Photo", new_product_image_path(@product) %>
+      </div>
+      <div class="well">
+        <div class="row">
+          <div class="col-xs-4">
+            <%= form_for @order_item, remote: true do |f| %>
+            <h4>Price: <span style="color: green"><%= number_to_currency @product.price %></span></h4>
+            <div class="input-group">
+                <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+              <div class="input-group-btn">
+                  <%= f.hidden_field :product_id, value: @product.id %>
+                  <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <%= link_to "Delete Product", product_path(@product),
   :data => {:confirm => "You sure?",
     :method => "delete"} %>
