@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'devise'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0.2'
 gem "font-awesome-rails"
 gem 'bootstrap-social-rails'
 gem 'rest-client'

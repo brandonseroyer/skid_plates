@@ -3,31 +3,36 @@
 <head>
   <title>PerformanceParts</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <% if request.ssl? %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-  <% else %>
-    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-  <% end %>
+  <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h1><%= link_to "My Store", products_path %></h1>
-        <h1><%= link_to 'Add Product', new_product_path %></h1>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Skid Plates", home_index_path, class: "navbar-brand" %>
       </div>
-      <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      <div id="nav-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to 'Home', home_index_path, id:'text-color' %>
+          </li>
+          <li>
+            <%= link_to 'Add Product', new_product_path %>
+          </li>
+          <li>
+            <%= link_to "My Store", products_path %>
+          <li>
+            <span class="cart-text"><%= render 'layouts/cart_text' %></span>
+          </li>
+        </ul>
       </div>
     </div>
-    <hr>
+  </nav>
     <%= yield %>
   </div>
-
 </body>
 </html>
