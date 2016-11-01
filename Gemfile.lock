@@ -114,6 +114,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    lightbox-bootstrap-rails (3.3.0.3)
     lightbox2-rails (2.8.2.1)
       railties (>= 3.1)
     loofah (2.0.3)
@@ -261,6 +262,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   launchy
+  lightbox-bootstrap-rails
   lightbox2-rails
   paperclip (~> 4.2)
   pg

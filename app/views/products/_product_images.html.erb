@@ -1,0 +1,13 @@
+<div>
+  <% if @product.images.any? %>
+    <% @images.each do |image| %>
+      <div class="img-thumbnail">
+        <%= link_to image_tag(image.avatar.url(:thumb)), image.avatar.url(:original), data: { toggle: "lightbox"} %>
+      </div>
+      <!-- <%= link_to "Delete", product_image_path(@product, image),
+      :data => {:confirm => "You sure?",
+        :method => "delete"} %> -->
+    <% end %>
+  <% end %>
+  <%= link_to "Add Photo", new_product_image_path(@product) %>
+</div>

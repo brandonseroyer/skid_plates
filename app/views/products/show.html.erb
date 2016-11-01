@@ -7,17 +7,9 @@
       <%= image_tag @product.image.url %>
       </div>
       <br>
-      <% if @product.images.any? %>
-        <% @images.each do |image| %>
-          <div class="img-thumbnail">
-            <%= link_to image_tag(image.avatar.url(:thumb)), image.avatar.url(:original), :rel => "lightbox" %>
-          </div>
-          <!-- <%= link_to "Delete", product_image_path(@product, image),
-          :data => {:confirm => "You sure?",
-            :method => "delete"} %> -->
-        <% end %>
-      <% end %>
-      <%= link_to "Add Photo", new_product_image_path(@product) %>
+
+      <div id="product-images">
+        <%= render 'products/product_images' %>
       </div>
 
       <div class="well">
@@ -40,9 +32,11 @@
           </div>
         </div>
       </div>
-      <%= link_to "Delete Product", product_path(@product),
-      :data => {:confirm => "You sure?",
-        :method => "delete"} %>
+      
+        <%= link_to "Delete Product", product_path(@product),
+        :data => {:confirm => "You sure?",
+          :method => "delete"} %>
+      </div>
     </div>
   </div>
 </div>
