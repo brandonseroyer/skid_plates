@@ -6,11 +6,17 @@ class OrderItemsController < ApplicationController
     session[:order_id] = @order.id
   end
 
+  def show
+    @order_items = @order.order_items
+    @sub_total = @order_items.map(&:total_price).sum
+  end
+
   def update
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attributes(order_item_params)
     @order_items = @order.order_items
+    @sub_total = @order_items.map(&:total_price).sum
   end
 
   def destroy
@@ -18,6 +24,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    @sub_total = @order_items.map(&:total_price).sum
   end
 
 private
