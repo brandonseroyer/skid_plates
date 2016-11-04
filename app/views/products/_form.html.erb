@@ -4,7 +4,7 @@
     <br>
     <%= f.text_field :name, required: 'required' %>
     <br><br>
-    <%= f.label :product_id %>
+    <%= f.label :product_id %> <b>ID</b>
     <br>
     <%= f.text_field :product_id, required: 'required' %>
     <br><br>
@@ -15,11 +15,6 @@
     <%= f.label :description %>
     <br>
     <%= f.cktext_area :description, required: 'required' %>
-    <br><br>
-    <%= f.label :status %>
-      <br>
-    <%= f.select :status, [['In Stock', true], ['Sold Out', false]] %>
-    <br>
     <br><br>
     <%= f.label :image %>
     <%= f.file_field :image %>

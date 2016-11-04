@@ -15,5 +15,5 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, sub_total: @sub_total, show_total: true %>
   <% end %>
-  <%= render 'carts/cart_total', sub_total: @sub_total %>
+  <%= render 'carts/cart_total', sub_total: @sub_total, shipping: @shipping %>
 <% end %>

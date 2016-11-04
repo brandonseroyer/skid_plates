@@ -1,0 +1,32 @@
+<%= form_for @order do |f| %>
+  <div class='col-xs-2'>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control", required: 'required' %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control", required: 'required' %><br>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", required: 'required' %><br>
+    Delivery Information
+    <hr>
+    <%= f.label :first_name %>
+    <%= f.text_field :delivery_first_name, class: "form-control", required: 'required' %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :delivery_last_name, class: "form-control", required: 'required' %><br>
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control", required: 'required' %><br>
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-control", required: 'required' %><br>
+    <%= f.label :state %>
+    <%= f.text_field :state, class: "form-control", required: 'required' %><br>
+    <%= f.label :zip %>
+    <%= f.text_field :zip, class: "form-control", required: 'required' %><br>
+    <%= f.label :country %>
+    <%= f.text_field :contry, class: "form-control", required: 'required' %><br>
+    <%= f.label :phone %>
+    <%= f.telephone_field :phone, class: "form-control", required: 'required'  %>
+    <%= f.hidden_field :shipping, value: @shipping %>
+    <%= f.hidden_field :subtotal, value: @subtotal %>
+    <%= recaptcha_tags %><br>
+    <%= f.submit "Place Order", class: 'btn btn-success' %>
+  </div>
+<% end %>

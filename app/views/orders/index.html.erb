@@ -1,0 +1,16 @@
+<% if current_user %>
+  <div id="forms">
+    <header>Orders Index</header>
+    <% @orders.each do |order| %>
+      <br>
+      Date: <%= order.created_at %><br><br>
+      Name: <%= order.first_name %> <%= order.last_name %><br>
+      Email: <%= order.email %><br>
+      <p><%= link_to "Delete", order_path(order),
+      :data => {:confirm => "You sure?",
+        :method => "delete"} %></p>
+      <hr>
+    <% end %>
+    <%= paginate @orders %>
+  </div>
+<% end %>
