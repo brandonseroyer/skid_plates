@@ -1,0 +1,35 @@
+<div class="well">
+  <header>Order Payment</header>
+  <br>
+  <b>Products</b>
+  <br>
+  <% @order.order_items.each do |item| %>
+    <%= item.product_id %> (<%= item.quantity %>)
+    <br>
+  <% end %>
+  <br>
+  <b>Customer</b>
+  <br>
+  Name: <%= @order.first_name %> <%= @order.last_name %>
+  <br>
+  Email: <%= @order.email %>
+  <br><br>
+  <b>Delivery Information</b>
+  <br>
+  Name: <%= @order.delivery_first_name %> <%= @order.delivery_last_name %>
+  <br>
+  Address: <%= @order.address %>
+  <br>
+  City: <%= @order.city %>
+  <br>
+  State: <%= @order.state %>
+  <br>
+  Zip: <%= @order.zip %>
+  <br>
+  Country: <%= @order.country %>
+  <br>
+  Phone: <%= @order.phone %>
+  <br><br>
+  <b>Subtotal: $<%= @order.subtotal %></b>
+  <br>
+</div>

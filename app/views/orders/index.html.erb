@@ -1,16 +1,41 @@
-<% if current_user %>
   <div id="forms">
-    <header>Orders Index</header>
-    <% @orders.each do |order| %>
+    <h1>Orders Index</h1>
+    <hr>
+    <b>Products</b>
+    <br>
+    <% @order_items.each do |item| %>
+      <%= item.product_id %> (<%= item.quantity %>)
       <br>
-      Date: <%= order.created_at %><br><br>
-      Name: <%= order.first_name %> <%= order.last_name %><br>
-      Email: <%= order.email %><br>
+    <% end %>
+    <br>
+    <% @orders.each do |order| %>
+      <b>Customer</b>
+      <br>
+      Name: <%= order.first_name %> <%= order.last_name %>
+      <br>
+      Email: <%= order.email %>
+      <br><br>
+      <b>Delivery Information</b>
+      <br>
+      Name: <%= order.delivery_first_name %> <%= order.delivery_last_name %>
+      <br>
+      Address: <%= order.address %>
+      <br>
+      City: <%= order.city %>
+      <br>
+      State: <%= order.state %>
+      <br>
+      Zip: <%= order.zip %>
+      <br>
+      Country: <%= order.country %>
+      <br>
+      Phone: <%= order.phone %>
+      <br><br>
+      <b>Subtotal: $<%= order.subtotal %></b>
+      <br>
       <p><%= link_to "Delete", order_path(order),
       :data => {:confirm => "You sure?",
         :method => "delete"} %></p>
       <hr>
     <% end %>
-    <%= paginate @orders %>
   </div>
-<% end %>
