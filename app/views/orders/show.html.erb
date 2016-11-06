@@ -4,7 +4,7 @@
   <b>Products</b>
   <br>
   <% @order.order_items.each do |item| %>
-    <%= item.product_id %> (<%= item.quantity %>)
+    <%= item.product_name %> (<%= item.quantity %>)
     <br>
   <% end %>
   <br>

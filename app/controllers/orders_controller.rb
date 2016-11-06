@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all.order(created_at: :desc)
     @order_items = current_order.order_items
-
   end
 
   def new
