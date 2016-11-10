@@ -1,10 +1,11 @@
 class ChargesController < ApplicationController
+
   def create
     @email = Order.find(params[:order_id]).email
     @first_name = Order.find(params[:order_id]).first_name
     @last_name = Order.find(params[:order_id]).last_name
     @amount = Order.find(params[:order_id]).subtotal
-    @subtotal = ActionController::Base.helpers.number_to_currency(@amount).to_s.split(//).join.gsub(".","").to_i
+    @subtotal = view_context.number_to_currency(@amount).to_s.split(//).join.gsub(".","").to_i
 
     customer = Stripe::Customer.create(
       email: @email,
