@@ -30,7 +30,7 @@
   <br>
   Phone: <%= @order.phone %>
   <br><br>
-  <b>Subtotal: $<%= @order.subtotal %></b>
+  <b>Subtotal: $<%= number_to_currency(@order.subtotal) %></b>
   <br>
 </div>
 
