@@ -1,15 +1,13 @@
   <div id="forms">
     <h1>Orders Index</h1>
     <hr>
-    <% @order_items.each do |item| %>
-      <%= item.product_name %> (<%= item.quantity %>)
-    <br>
-    <% end %>
-    <br>
-
     <% @orders.each do |order| %>
-      <% unless order.city.blank? %>
+      <% unless order.tracking_number.blank? %>
         <b>Customer</b>
+        <br>
+        Tracking Number: <%= order.tracking_number %>
+        <br>
+        Cart: <%= order.cart %>
         <br>
         Name: <%= order.first_name %> <%= order.last_name %>
         <br>

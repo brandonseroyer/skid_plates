@@ -34,11 +34,16 @@
     display: block;
 }
 
+.navbar-brand {
+  font-weight: bolder;
+}
+
 .navbar-default {
   background-color: white;
   width: 100%;
-  margin-bottom:0px !important;
+  margin-bottom: 0px !important;
   padding-right: 1%;
+  height: 120px;
 }
 
 .product-box {
@@ -56,6 +61,11 @@
 #forms {
   padding-left: 2%;
   padding-top: 2%;
+}
+
+
+#nav-right {
+  padding-top: 50px;
 }
 
 #products-index {

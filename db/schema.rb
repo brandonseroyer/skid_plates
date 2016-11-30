@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106212718) do
+ActiveRecord::Schema.define(version: 20161130021111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20161106212718) do
     t.string   "zip"
     t.string   "country"
     t.string   "phone"
+    t.string   "cart"
+    t.integer  "tracking_number"
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
@@ -84,6 +86,7 @@ ActiveRecord::Schema.define(version: 20161106212718) do
     t.json     "avatars"
     t.decimal  "price",              precision: 12, scale: 3
     t.boolean  "active"
+    t.integer  "order_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,21 +13,21 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <%= link_to "Skid Plates", home_index_path, class: "navbar-brand" %>
+        <%= link_to image_tag('logo.png'), home_index_path, class: "navbar-brand" %>
       </div>
       <div id="nav-right">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'Home', home_index_path, id:'text-color' %>
+            <%= link_to 'Home', home_index_path, class: "navbar-brand" %>
           </li>
           <li>
-            <%= link_to 'Orders', orders_path, id:'text-color' %>
+            <%= link_to 'Orders', orders_path, class: "navbar-brand" %>
           </li>
           <li>
-            <%= link_to 'Add Product', new_product_path %>
+            <%= link_to 'Add Product', new_product_path, class: "navbar-brand" %>
           </li>
           <li>
-            <%= link_to "My Store", products_path %>
+            <%= link_to "My Store", products_path, class: "navbar-brand" %>
           <li>
             <span class="cart-text"><%= render 'layouts/cart_text' %></span>
           </li>

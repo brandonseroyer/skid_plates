@@ -9,6 +9,17 @@ class Order < ActiveRecord::Base
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum + shipping
   end
 
+  def cart
+    product = [order_items.collect { |oi| oi.product_name }].flatten
+    quantity = [order_items.collect { |oi| oi.quantity }].flatten
+    cart = product.zip(quantity)
+    if cart.count == 1
+      cart.flatten
+    else
+      cart
+    end
+  end
+
 private
 
   def set_order_status
