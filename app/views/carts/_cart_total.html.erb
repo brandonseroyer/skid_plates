@@ -1,7 +1,7 @@
 <div class="well">
-  <b>Shipping: $<%= number_to_currency(@shipping) %></b>
+  <b>Shipping: <%= number_to_currency(@shipping) %></b>
   <br>
-  <b>Subtotal: $<%= number_to_currency(sub_total) %></b>
+  <b>Subtotal: <%= number_to_currency(sub_total) %></b>
   <br><br>
   <%= link_to 'Checkout', edit_order_path(current_order), class: 'btn btn-primary' %>
 </div>

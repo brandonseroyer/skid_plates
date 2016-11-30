@@ -1,12 +1,10 @@
 class ChargesController < ApplicationController
-
   def create
     @order = Order.find(params[:order_id])
     @email = Order.find(params[:order_id]).email
     @first_name = Order.find(params[:order_id]).first_name
     @last_name = Order.find(params[:order_id]).last_name
-    @amount = Order.find(params[:order_id]).subtotal
-    @subtotal = view_context.number_to_currency(@amount).to_s.split(//).join.gsub(".","").to_i
+    @amount = view_context.number_to_currency(Order.find(params[:order_id]).subtotal).to_s.split(//).join.gsub(/[.,]/, "").to_i
 
     customer = Stripe::Customer.create(
       email: @email,
@@ -15,12 +13,12 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @subtotal,
+      amount: @amount,
       description: "Order submitted by #{@first_name} #{@last_name}",
       currency: 'usd'
     )
 
-    create_id
+    create_tracking_number
     reset_session
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -29,7 +27,7 @@ class ChargesController < ApplicationController
 
   private
 
-  def create_id
+  def create_tracking_number
     @order.update(tracking_number: @order.id)
   end
 end

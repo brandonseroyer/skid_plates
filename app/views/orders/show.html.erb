@@ -30,7 +30,7 @@
   <br>
   Phone: <%= @order.phone %>
   <br><br>
-  <b>Subtotal: $<%= number_to_currency(@order.subtotal) %></b>
+  <b>Subtotal: <%= number_to_currency(@order.subtotal) %></b>
   <br>
 </div>
 
@@ -45,7 +45,7 @@
 
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description= "$<%= @order.subtotal %>"
+        data-description= "<%= number_to_currency(@order.subtotal) %>"
         data-amount="<% @order.subtotal %>"
         data-locale="auto"></script>
 <% end %>

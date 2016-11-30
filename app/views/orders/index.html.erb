@@ -29,7 +29,7 @@
         <br>
         Phone: <%= order.phone %>
         <br><br>
-        <b>Subtotal: $<%= number_to_currency(order.subtotal) %></b>
+        <b>Subtotal: <%= number_to_currency(order.subtotal) %></b>
         <br>
         <p><%= link_to "Delete", order_path(order),
         :data => {:confirm => "You sure?",
