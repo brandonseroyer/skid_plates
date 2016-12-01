@@ -1,19 +1,10 @@
-<!-- <%= form_tag products_path, :method => 'get', :id => "search", remote: true do %>
-<p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
-</p>
-<% end %> -->
-
-<div id="products-index">
-  <h3 class="text-center">Products For Sale</h3>
-  <hr>
-  <b>Total Products: <%= @total_products %></b>
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <% @products.each do |product| %>
-        <%= render "product_row", product: product, order_item: @order_item %>
-      <% end %>
-    </div>
+<%= form_tag products_path, :method => 'get', :id => "products_search" do %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <div class="well">
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
   </div>
+  <% end %>
+<div id="products">
+<%= render 'products/products' %>
 </div>

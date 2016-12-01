@@ -10,4 +10,12 @@ class Product < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   default_scope { where(active: true) }
+
+  def self.search(search)
+    if search
+      where('name ILIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end
