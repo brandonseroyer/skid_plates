@@ -1,0 +1,13 @@
+<div>
+  <% @cars.each do |car| %>
+    <%= car.image %>
+    <br>
+    <%= car.name %>
+    <br>
+    <%= car.year %>
+    <br>
+    <p><%= link_to "Delete", order_path(order),
+    :data => {:confirm => "You sure?",
+      :method => "delete"} %></p>
+  <% end %>
+</div>
