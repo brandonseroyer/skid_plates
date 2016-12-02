@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
-    @cars = Car.all
+    @cars = Car.all.order(created_at: :desc)
   end
 
   def new
