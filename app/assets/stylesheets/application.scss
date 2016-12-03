@@ -23,7 +23,17 @@
  @import "font-awesome";
  @import "social-share-button";
 
-.carousel {
+.car-box {
+  border: 1px solid black;
+  width: 100%;
+  padding-left: 25%;
+  padding-top: 5%;
+}
+
+.container {
+    margin: 2%;
+    text-align: center;
+    padding-left: 7%;
 }
 
 .dropdown-menu li:hover .sub-menu {
@@ -52,6 +62,12 @@
   padding: 5%;
 }
 
+.universal-page {
+  margin: auto;
+  width: 80%;
+  padding: 5%;
+}
+
 #carousel-home,
 #carousel-home .item,
 #carousel-home .item img {
@@ -77,4 +93,10 @@
 }
 #product-show {
   padding: 3%;
+}
+
+#store-categories {
+  width: 100%;
+  padding-left: 25%;
+  padding-top: 5%;
 }

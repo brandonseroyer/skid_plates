@@ -1,6 +1,6 @@
 class Car < ActiveRecord::Base
   has_attached_file :image, :styles => {
-     :medium => "300x300>",
+    :medium => "300x300>",
     :thumb => "100x100>"
    }
 

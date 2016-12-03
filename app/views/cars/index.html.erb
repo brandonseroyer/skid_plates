@@ -1,13 +1,21 @@
-<div>
+<div class ="universal-page">
+  <center><h1>Products By Car Model</h1></center>
+  <br>
   <% @cars.each do |car| %>
-    <%= image_tag car.image %>
-    <br>
-    <%= car.name %>
-    <br>
-    <%= car.year %>
-    <br>
-    <p><%= link_to "Delete", car_path(car),
-    :data => {:confirm => "You sure?",
-      :method => "delete"} %></p>
+    <%= link_to car_path(car) do %>
+    <div class="col-md-4">
+      <div class="car-box">
+        <span>
+          <%= image_tag car.image %>
+          <br>
+          <%= car.name %>
+          <br>
+          <p><%= link_to "Delete", car_path(car),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %></p>
+        </span>
+      </div>
+    </div>
+    <% end %>
   <% end %>
 </div>
