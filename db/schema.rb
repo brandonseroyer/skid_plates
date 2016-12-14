@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(version: 20161203082747) do
     t.json     "avatars"
     t.decimal  "price",              precision: 12, scale: 3
     t.boolean  "active"
-    t.integer  "order_id"
   end
 
   create_table "users", force: :cascade do |t|

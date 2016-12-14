@@ -23,7 +23,6 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @products = Product.search(@car.name)
     @order_item = current_order.order_items.new
-    @total_products = Product.all.count
     render :show
   end
 

@@ -24,24 +24,27 @@
  @import "social-share-button";
 
 .car-box {
-  border: 1px solid black;
   width: 100%;
   padding-left: 25%;
   padding-top: 5%;
 }
 
+.car-box:hover {
+  box-shadow: 2px 2px 15px black;
+}
+
 .container {
-    margin: 2%;
-    text-align: center;
-    padding-left: 7%;
+  margin: 2%;
+  text-align: center;
+  padding-left: 7%;
 }
 
 .dropdown-menu li:hover .sub-menu {
-    visibility: visible;
+  visibility: visible;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .navbar-brand {
