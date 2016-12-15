@@ -23,6 +23,10 @@
  @import "font-awesome";
  @import "social-share-button";
 
+body {
+  padding-top: 120px;
+}
+
 .car-box {
   width: 100%;
   padding-left: 25%;
@@ -47,17 +51,25 @@
   display: block;
 }
 
+.nav-text-color {
+  color: black;
+}
+
 .navbar-brand {
   font-weight: bolder;
 }
 
-.navbar-default {
+.navbar {
   background-color: white;
   width: 100%;
   margin-bottom: 0px !important;
-  padding-right: 1%;
+  padding-right: 5%;
   height: 120px;
+  border-bottom: thin solid #000000;
+  font-size: 18px;
+  font-weight: bold;
 }
+
 
 .product-box {
   border: 1px solid #000000;
