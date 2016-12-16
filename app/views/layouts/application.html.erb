@@ -10,7 +10,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <%= link_to image_tag('logo.png'), home_index_path %>
@@ -44,7 +44,7 @@
           </ul>
         </div>
       </div>
-    </header>
+    </nav>
     <%= yield %>
   </body>
 </html>

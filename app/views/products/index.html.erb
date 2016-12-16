@@ -5,7 +5,10 @@
     <%= submit_tag "Search", :name => nil %>
   </div>
   <% end %>
-<b>Total Products: <%= @total_products %></b>  
+<%= link_to "Home", root_path %> > <%= link_to "Shop By", store_index_path %>
+ > All Products
+ <br><br>
+<b>Total Products: <%= @total_products %></b>
 <div id="products">
 <%= render 'products/products' %>
 </div>
